@@ -1,0 +1,49 @@
+Learning Vim
+------------
+
+Open, Saving, Closing
+---------------------
+Wipe session and return to original file:      :e!
+Save and quit the command is:                  :wq or ZZ
+Quit without saving:                           :q!
+Overwrite an existing file.                    :w!
+Save under another name:                       :w
+Access the unix shell:                         :!<cmd>
+Create and enter a shell:                      :sh
+Force vim to save the buffer:                  :pre
+
+Simple Editing
+--------------
+Left one space:                                h
+Down one line:                                 j
+Up, one line:                                  k
+Right, one space:                              l
+You can precede movement commands with numbers.
+
+Movement within a line
+----------------------
+Set number of columns:                         :set wm=<#OfColumns>
+Move to beginning of line:                     0
+Move to end of line:                           $
+
+Movement by text blocks
+-----------------------
+Move forward by word, including punctuation:   w
+Move forward by word, excluding punctuation    W
+Move backwards by word, including punctuation: b
+Move backwards by word, excluding punctuation: B
+Move to n line:                                nG
+Move to the last line of the file:             G
+
+More Simple editing
+-------------------
+Change the letter the cursor is on:            r<letter>
+Delete the letter the cursor is on:            x
+Delete the entire line:                        dd
+Copy deleted line:                             P
+Append text just after the cursor:             a
+
+Change text to the end of a word:              cw
+Change text back two words:                    c2b
+Change text to the end of the line:            c$
+Change text to the beginning of the line:      c0

@@ -1,0 +1,60 @@
+                          *** TMUX TUTORIAL ***
+
+-------------------------------------------------------------------------------
+| Sessions in Tmux                                                            |
+|-----------------------------------------------------------------------------|
+| Start tmux with a session name:                                             |
+| > tmux new -s <session name>                                                |
+|                                                                             |
+| Attach tmux to a session:                                                   |
+| > tmux a -t <session name>                                                  |
+|                                                                             |
+| List sessions:                                                              |
+| > tmux ls                                                                   |
+|                                                                             |
+| Kill session:                                                               |
+| > tmux kill-session -t <session name>                                       |
+|                                                                             |
+| Inside tmux:                                                                |
+| ------------                                                                |
+| New session:                                                                |
+| PFX :new                                                                    |
+|                                                                             |
+| List sessions:                                                              |
+| PFX s                                                                       |
+|                                                                             |
+| Name session:                                                               |
+| PFX $ name                                                                  |
+-------------------------------------------------------------------------------
+| Resizing Panes n Tmux                                                       |
+|------------------------------------------------------------------------------
+| You can also resize panes if you don’t like the layout defaults. I persona- |
+| lly rarely need to do this, though it is handy to know how. Here is the ba- |
+| sic syntax to resize panes:                                                 |
+| PFX = CTRL + b                                                              |
+|                                                                             |
+| PFX : resize-pane -D (Resizes the current pane down)                        |
+| PFX : resize-pane -U (Resizes the current pane upward)                      |
+| PFX : resize-pane -L (Resizes the current pane left)                        |
+| PFX : resize-pane -R (Resizes the current pane right)                       |
+| PFX : resize-pane -D 20 (Resizes the current pane down by 20 cells)         |
+| PFX : resize-pane -U 20 (Resizes the current pane upward by 20 cells)       |
+| PFX : resize-pane -L 20 (Resizes the current pane left by 20 cells)         |
+| PFX : resize-pane -R 20 (Resizes the current pane right by 20 cells)        |
+| PFX : resize-pane -t 2 20 (Resizes the pane with id of 2 down by 20 cells)  |
+| PFX : resize-pane -t -L 20 (Resizes the pane with id of 2 left by 20 cells) |
+-------------------------------------------------------------------------------
+| Split Panes in Tmux                                                         |
+-------------------------------------------------------------------------------
+| % vertical split " horizontal split                                         |
+| o swap panes                                                                |
+| q show pane numbers                                                         |
+| x kill pane                                                                 |
+| + break pane into window (e.g. to select text by mouse to copy)             |
+| - restore pane from window                                                  |
+| ⍽ space - toggle between layouts                                            |
+| PFX q (Show pane numbers, type the key to goto that pane)                   |
+| PFX { (Move the current pane left)                                          |
+| PFX } (Move the current pane right)                                         | 
+| PFX z toggle pane zoom                                                      |
+-------------------------------------------------------------------------------

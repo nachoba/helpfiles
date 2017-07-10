@@ -1,0 +1,9 @@
+Format text to 75 columns
+----------------------------------------------------------------------------
+1. Start vim with the file you want to format.
+2. Make sure you have "par" installed. If not: sudo apt-get install par.
+3. In vim enter :set formatprg=par \75j
+4. Select the text you want to format. Shift+V and } to go to the end of the
+   line.
+5. Use the gq command.
+

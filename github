@@ -1,0 +1,44 @@
+Using GitHub from the Command Line
+--------------------------------------------------------------------------------
+To create a GitHub repo:
+First we have to create a SSH key:
+ssh-keygen -t rsa -b 4096 -C "0800nacho@gmail.com"
+
+1. Create the repo
+--------------------------------------------------------------------------------
+curl -u 'nachoba' https://api.github.com/user/repos -d
+      '{"name":"projectName", "description":"This project is..."}'
+
+Where:
+* -u specifies the user name and password to use for server authentication
+* -d allows to send POST data with the request
+* "name" is the only POST data required.
+
+2. Define where to push to
+--------------------------------------------------------------------------------
+echo "# practice" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/nachoba/practice.git
+git push -u origin master
+
+3. Working with the repo.
+-------------------------------------------------------------------------------
+After changes are made:
+ git add *
+ git commit -m "your message here"
+ git push -u origin master
+
+4. To see if there are changes to be commited:
+--------------------------------------------------------------------------------
+git status
+
+5. To pull stuff from the repo to the local repo
+--------------------------------------------------------------------------------
+git pull origin master
+
+
+See:
+https://stackoverflow.com/questions/8775850/how-do-i-add-files-and-folders-into-github-repos
+
