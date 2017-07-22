@@ -1,0 +1,44 @@
+The Buffer
+----------
+In Emacs, all files are buffers, but not all buffers are files. If you want a throw-away area to temporarily store snippets of text, you just create and name a new buffer. You have to explicitly save it to a file on disk to make the buffer persist.
+Almost all of Emacs' own commands act on buffers. In Emacs, the buffer is the data structure.
+
+The Window and the Frame
+------------------------
+When you look at a buffer on the screen it is displayed in a window.
+A window is just a tiled portion of the frame.
+Each frame can have one or more windows, and each window can have exactly one buffer.
+A buffer must be viewed in a window in order to be displayed, and for this window to be visible to the user it must be in a frame.
+
+Modeline, Echo Area, and Minibuffer
+-----------------------------------
+Emacs uses the modeline to communicate facts about Emacs and the buffer you're in. The modeline looks like this:
+
+U:--- emacsBuffer    All L17 (Fundamental)
+
+The buffer is: emacsBuffer
+The major mode is: Fundamental
+
+The minibuffer is directly below the modeline and it is where errors and general information are shown.
+The echo area and the minibuffer share the same spot on the screen. The minibuffer is almost identical to a normal buffer: you can use most of your editing commands, and the one-line minibuffer will expand to multiple lines if necessary.
+
+The Point and Mark
+------------------
+The point is just another word for the caret or cursor. The point itself is your current position in a buffer.
+It's often represented as -!-.
+Each buffer tracks the position of the point separately, so if you switch between buffers the location of each point is remembered separately.
+A buffer that "has the point" is the current buffer. Only one buffer can ever be the current buffer at a time.
+
+The point is part of a duo called the point and mark, which represents the boundary for a region, which is a contiguous block of text, usually, in the current buffer. In other editors, this is called the selection or the highlight. The mark is typically invisible.
+
+Killing, Yanking and CUA
+------------------------
+Killing is cutting.
+Yanking is pasting.
+Copying is "saving to the kill ring", or just copy.
+
+Major Modes and Minor Modes
+---------------------------
+Major modes control how buffers behave. Each buffer will always have a major mode.
+Minor modes are typically optional add-ons that you enable for some (or all) of your buffers.
+The major mode is always displayed in the modeline. Some minor modes are also displayed there, but usually only the ones that alter the buffer or how you interact with it in some way.
