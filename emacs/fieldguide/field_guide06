@@ -37,4 +37,152 @@ M-x <name-of-the-command> <ENTER>
 An example: the ispell-buffer command is not bound to any particular key sequence.
             Invoke it using M-x ispell-buffer <ENTER>, to check the spelling of the
 	    current buffer.
-	    
+
+When you need a command name, Emacs will help you so you'll rarely have to type the
+entire command name. This is a feature called "completion".
+
+Buffers
+-------
+Emacs lets you do more than one thing a time, you can edit as many files as you want.
+To offer this flexibility, Emacs keeps a separate storage area called a BUFFER, for
+each particular task. (if you are editing three different files, Emacs will maintain
+three separate buffers, one for each one).
+
+There're two ways in which buffers are created: 1) you can create a buffer whenever you
+want to. 2) Emacs will automatically create a buffer when the need arises.
+
+For example, if you type C-h i, Emacs will create a new buffer to hold the help information.
+To keep track of your resources, you can use a command that tells Emacs to display a list
+of all your buffers: C-x C-b (when you use this command, Emacs creates yet another buffer!)
+To keep track of all your buffers, Emacs assigns each one of them a unique name.
+One of the most important uses for a buffer is to act as a temporary work area when you
+need to make some quick notes.
+In summary:
+   * Everything you do with Emacs is contained in a buffer.
+   * Each buffer has a unique name.
+   * You can create a new buffer whenever you want.
+   * You can kill (delete) a buffer whenever you want.
+   * Some buffers are created by you; some are created automatically by Emacs.
+   * Use C-x C-b to list the current buffers
+
+Windows
+-------
+So, you can have as many buffers as you want, but how do you see what is in your buffers?
+The answer is that Emacs creates one or more WINDOWS on your screen and, within each window
+you can view the contents of a single buffer.
+Some prefer to use one large window and look at only one buffer at a time, others like to use
+multiple windows to look at more than one buffer at a time.
+The best way to think of a window is a fixed-size opening into a buffer. When you look into
+a window, you are looking at the part of the buffer that is currently being displayed.
+One nice thing about Emacs is that it lets you display a particular buffer in more than one
+window at the same time. This comes handy when the content of the buffer is too large to fit
+into a single window. In such cases, you can use two windows to look at different parts of
+the same buffer at the same time.
+
+For example:
+C-x 2  Will split the current buffer into two windows.
+C-x h  Selects the content of the entire buffer.
+C-w    Erases the selection.
+
+As you work with Emacs, the cursor is always in one particular window, which we call the
+SELECTED WINDOW or CURRENT WINDOW. If you want to insert characters into a different
+window, you must first move the focus to that window.
+
+The Mode Line Read-Only Viewing
+-------------------------------
+Near the bottom of each window is a special line called the MODE LINE. It contains
+information about the buffer that is currently being displayed in that window. The
+mode line is displayed in reverse colors to make it easy to read.
+
+Near the left-hand side of each mode line there is a colon :
+The two characters after the colon show you the status of the buffer.
+Character	   Meaning
+---------	   ----------------------------------
+--		   Buffer has not been modified
+**		   Buffer has been modified but not saved yet
+%%		   Read-only mode: Buffer has not been modified
+%*		   Read-only mode: Buffer has been modified
+
+At any time, you can turn read-only mode on and off by typing C-x C-q.
+C-x C-q : Toggle read-only-mode
+
+
+The next item of information on the status line is the name of the buffer.
+Emacs sometimes creates buffers on its own. In particular when you start Emacs
+will create an empty buffer named *scratch*, also when you start the Info
+facility, Emacs creates a buffer named *info*.
+
+If the buffer is too large to fit into the window all at once, you will see
+three possible position descriptions:
+      Top : If the window is currently showing the beginning of the buffer.
+      Bot : If the window is showing the end of the buffer.
+      Otherwise you will se a number, this number indicates what percentage
+      of the buffer is above the top in the window.
+
+To the right is the letter L followed by a number, indicating the line number
+of the cursor position.
+
+Finally to the right of the line number you will see one or more words in
+parentheses. These words show you the MODE in which Emacs is operating for that
+particular buffer. Modes can make Emacs in different ways to suit the type of
+work you are doing.
+
+The Echo Area / Typing Emacs Commands
+-------------------------------------
+Emacs only echoes some commands, and when it does, the characters are displayed
+on the bottom line of the screen, which is called the ECHO AREA.
+Emacs does not echo any commands that consist of only a single character combination.
+For example, commands like C-n, C-f...
+Emacs echoes only multi-character commands, but it waits one second after you press
+a character before it echoes it. If within that time you press a second character,
+Emacs does not echo the first one.
+The echo area is also used by Emacs to display messages. These may be error messages,
+warnings, or simply informative components.
+Finally, if you are typing a command and you change your mind, press C-g to cancel
+the command.
+
+The Minibuffer
+--------------
+Many commands require you to enter further input once you press the initial key
+sequences. For example, the command C-x C-f tells Emacs to read a file into a buffer.
+Once you press C-x C-f, Emacs will ask you for the file name. If the file exists,
+Emacs, will copy it into a new buffer. If the file doesn't exist, Emacs will create
+it for you.
+So the bottom of the screen serves two purposes and hence has two names according to
+what Emacs is performing: ECHO AREA or MINIBUFFER
+
+Completion
+----------
+The completion facility has a lot of complex details. However for basic use there
+are four completion commands.
+Command	 	    Action
+-------		    ------------------------------
+TAB		    Complete text in minibuffer as much as possible
+C-i		    Same as TAB
+SPC		    Complete text in minibuffer up to end of the word
+RET		    Same as TAB, then enter the command
+?		    Create new window, display list of possible completions
+
+For example: There a command named auto-fill-mode which is useful when you are typing
+English text. It tells Emacs to break long lines for you automatically as you type,
+so you don't have to keep pressing <ENTER>. To execute this command, you would press
+M-x, and type auto-fill-mode, and then press <ENTER>
+Let's say that you want to execute this command but you forget the full name. You only
+remember that is starts with the word "auto". Press M-x and then type "auto". Then press
+? and Emacs will create a new window with a buffer named *Completions* in which you will
+see al the possible completions. To finish the command, all you need to do is type -f
+and press <ENTER>.
+
+Disabled Commands
+-----------------
+There are some commands that are potentially dangerous so by default they are disabled.
+For example: C-x C-u converts text to all uppercase letters (the command is upcase-region).
+C-x C-l converts text to lowercase (the command is downcase-region)
+When you run these commands Emacs will ask:
+Do you want to use this command anyway?
+
+The possible responses are:
+y   	     Run command; enable it for rest of the work session
+n	     Do not run command; leave it disabled
+SPC	     Run command once; leave it disabled
+!	     Run command; enable all commands for the rest of the work session
