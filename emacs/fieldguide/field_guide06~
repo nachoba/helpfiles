@@ -1,0 +1,35 @@
+Chapter 6: Commands, Buffers, Windows
+-------------------------------------
+Every Emacs command is a Lisp function (program module) that has been designed
+to be used interactively. All commands have a name, usually consisting of lowercase
+letter and hyphens.
+For example: the command that moves the cursor up one line is called: previous-line.
+             the command that moves the cursor down one line is called next-line.
+
+
+An INPUT EVENT is anything you can do to send input to the computer. A KEY SEQUENCE
+is a series of input events that, taken as a unit, have meaning. Key sequences are
+used to invoke commands.
+
+The connection between a key sequence and the command it invokes is called a KEY
+BINDING. For example, the sequence C-p is bound to the previous-line command.
+
+Whenever you type a key sequence, you are actually telling Emacs to execute the
+command that is bound to that sequence.
+
+Some examples:
+
+KEY SEQUENCE	COMMAND
+C-p		previous-line
+C-n		next-line
+C-f		forward-char
+M-f		forward-word
+
+There are hundreds of Emacs commands and learning to use Emacs is learning how to use
+all the key sequences that are bound to the most useful commands. Most of the time
+you don't need to know the names of actual commands you are using: all you need to
+remember is which keys to press. However, Emacs has so many commands that there aren't
+enough key sequences to go around, which means that many Emacs commands do not have
+their own key sequences.
+To use such commands you have to type the full name of the command. To do so:
+M-x <name-of-the-command> <ENTER>
