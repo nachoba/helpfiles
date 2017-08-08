@@ -1,0 +1,46 @@
+Starting & Stopping Emacs
+-------------------------
+Starting Emacs from the command line:
+
+>$ emacs [option...] [file...]
+>$ emacs
+
+It's better to use the last option, and then load the file needed.
+
+>$ emacs -Q
+Will start Emacs without a splash-page but also won't load personal configurations.
+
+>$ emacs <file> -f read-only-mode
+Will start Emacs with the file in read only mode. The -f option tells Emacs to execute
+the Lisp function that is specified after the option; in this case toggle-read-only.
+
+Recovering Data after a System Failure
+--------------------------------------
+Emacs creates the auto-save file in the same directory as the file you are editing.
+The name of the file will be the same as the file you are editing, except that there
+will be a # character at the beginning and the end of the name.
+Whenever you save a file, Emacs automatically removes the auto-save file. If you make
+more changes to the file, Emacs creates a new auto-save file. Each time you tell Emacs
+to begin work with an existing file, Emacs first checks to see if there exists a 
+corresponding auto-save file. If so, it means that the last time you edited the file, 
+you were unable to save your work properly. In such cases, Emacs will display a message
+like the following:
+
+Auto save file is newer; consider M-x recover-file
+
+Stopping Emacs
+--------------
+To exit Emacs:
+
+C-x C-c
+
+If files are not save, emacs will ask:
+
+Save file /home/nacho/whatever? (y, n, !, ., q, C-r or C-h)
+y    Save the specified file
+n    Do not save the specified file
+!    Save all the remaining files
+q    Quit immediately without saving
+.    Save the specified file and then quit
+C-r  View specified file
+C-h  Display help information
