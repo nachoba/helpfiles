@@ -14,10 +14,10 @@ To recover a file type M-x
 
 Copy/Cut/Paste
 --------------
-C-k     : Kill/Delete a line from the cursor to the end of the line and puts it
-          into the clippboard.
-C-y     : Pastes whatever is in the clipboard at the cursor.
-C-Space : Starts marking/highlighting a region.
+C-k         : Kill/Delete a line from the cursor to the end of the line and puts it
+              into the clippboard.
+C-y         : Pastes whatever is in the clipboard at the cursor.
+C-Space     : Starts marking/highlighting a region.
 M-w	    : Copies this region into the clippboard.
 C-w	    : Cuts this region into the clippboard.
 C-g	    : discards a command
@@ -31,24 +31,24 @@ M-<	: Beginning of buffer.
 
 Undo/Redo
 ---------
-C-/	    : Undo
+C-/	: Undo
 C-g C-/ : Redo
 
 Buffer Management Commands
 --------------------------
 C-x b	  : Switch between buffers, ask you which buffer to switch to.
-C-x C-b : Switch buffers and list buffers.
-C-x o   : Other window (close the window with C-x 0)
-C-x 0   : Will close the window
-C-x 1   : Will leave only one window
-C-x 2   : Will make a horizontal split
-C-x 3   : Will make a vertical split
+C-x C-b   : Switch buffers and list buffers.
+C-x o     : Other window (close the window with C-x 0)
+C-x 0     : Will close the window
+C-x 1     : Will leave only one window
+C-x 2     : Will make a horizontal split
+C-x 3     : Will make a vertical split
 
 Search Commands
 ---------------
 C-s	      : searches forward as you type. Beare \n is not new line, it is C-j
-M-C-s	    : Searches a regexp.
+M-C-s	      : Searches a regexp.
 M-%	      : Search % Replace. ! will replace all occurrences.
-M-s o	    : Shows the occurrence window.
-M-x grep  : Shows grep result in a grep window
-M-x rgrep : Recursive grep
+M-s o	      : Shows the occurrence window.
+M-x grep      : Shows grep result in a grep window
+M-x rgrep     : Recursive grep
